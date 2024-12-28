@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define global variables for theming */
+:root {
+  --color-background-light: #ffffff;
+  --color-foreground-light: #171717;
+
+  --color-background-dark: #0a0a0a;
+  --color-foreground-dark: #ededed;
+
+  --font-primary: 'Inter', Arial, sans-serif;
+  --font-secondary: 'Roboto Mono', monospace;
+
+  --border-radius: 8px;
+}
+
+/* Automatically switch themes based on system preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-light: var(--color-background-dark);
+    --color-foreground-light: var(--color-foreground-dark);
+  }
+}
+
+/* Apply global styles */
+body {
+  background-color: var(--color-background-light);
+  color: var(--color-foreground-light);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--color-foreground-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3498db; /* A nice blue for hover effects */
+}
+
+/* Utility Classes */
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: var(--color-foreground-light);
+  color: var(--color-background-light);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* Forms */
+input, textarea, select {
+  font-family: var(--font-primary);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Dark Mode Utility Class */
+.dark {
+  --color-background-light: var(--color-background-dark);
+  --color-foreground-light: var(--color-foreground-dark);
+}
