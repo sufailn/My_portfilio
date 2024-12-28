@@ -61,7 +61,7 @@ export default function Home() {
       I&apos;m
       <span className='creative-text block sm:inline' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
       <span className='block sm:inline' style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
-      <span className='block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Full-stack Developer.'>a Full-stack Developer.</span>
+      <span className='block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Fullstack Developer.'>a Fullstack Developer.</span>
       <span className='block sm:inline' style={{ '--i': 3 } as React.CSSProperties} data-text='a Designer.'>a Designer.</span>
       </div>
       </section>
