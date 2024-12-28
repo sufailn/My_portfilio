@@ -12,18 +12,7 @@
     transform: scale(1);
   }
 }
-/* Mobile Scroller View */
-@media screen and (max-width: 480px) {
-  .scroller-view {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
 
-  .scroller-view > * {
-    display: inline-block;
-    vertical-align: middle;
-  }
-}
 .perspective {
   perspective: 1000px;
 }

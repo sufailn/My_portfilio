@@ -57,12 +57,12 @@ export default function Home() {
     {/* About Me Section */}
     <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
       <section className="section__container text-center">
-      <div className='creative__text--animation-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold'>
-        I&apos;m
-        <span className='creative-text block sm:inline' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
-        <span className='block sm:inline' style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
-        <span className='block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Full-stack Devoloper.'>a Full-stack Devoloper.</span>
-        <span className='block sm:inline' style={{ '--i': 3 } as React.CSSProperties} data-text='a Designer.'>a Designer.</span>
+      <div className='creative__text--animation-1 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
+      I&apos;m
+      <span className='creative-text block sm:inline' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
+      <span className='block sm:inline' style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
+      <span className='block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Full-stack Developer.'>a Full-stack Developer.</span>
+      <span className='block sm:inline' style={{ '--i': 3 } as React.CSSProperties} data-text='a Designer.'>a Designer.</span>
       </div>
       </section>
     </section>
