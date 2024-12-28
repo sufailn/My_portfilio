@@ -57,12 +57,12 @@ export default function Home() {
     {/* About Me Section */}
     <section className="container">
       <section className="section__container">
-        <div className="creative__text--animation-1">
-          I'm 
-          <span className="creative-text" data-text="Sufail Ahammed." style={{ "--i": 0 } as React.CSSProperties}>Sufail Ahammed.</span>
-          <span style={{ "--i": 1 } as React.CSSProperties} data-text="a Coder.">a Coder.</span>
-          <span style={{ "--i": 2 } as React.CSSProperties} data-text="a Designer.">a Designer.</span>
-          <span style={{ "--i": 3 } as React.CSSProperties} data-text="a Creative.">a Creative.</span>
+        <div className='creative__text--animation-1'>
+          Im 
+          <span className='creative-text' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
+          <span style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
+          <span style={{ '--i': 2 } as React.CSSProperties} data-text='a Designer.'>a Designer.</span>
+          <span style={{ '--i': 3 } as React.CSSProperties} data-text='a Creative.'>a Creative.</span>
         </div>
       </section>
     </section>
