@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaUser, FaGraduationCap, FaTools, FaProjectDiagram, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaHome, FaGraduationCap, FaTools, FaProjectDiagram, FaEnvelope, FaPhone } from "react-icons/fa";
 import Link from "next/link";
 import './styles.css'; // Import the CSS file
 
@@ -229,11 +229,7 @@ export default function Home() {
             </div>
             <div  className="text-center ml-5 pl-3"></div>
                 <p className="ml-24">&copy; {new Date().getFullYear()} Sufail Ahammed. All rights reserved.</p>
-              
-            
             </footer>
-         
-          
           <nav className="fixed top-1/2 left-0 transform -translate-y-1/2 flex flex-col space-y-4 p-2 bg-gray-800 rounded-r-lg shadow-lg " style={{ zIndex: 1000 }}>
         <a href="#home" className="text-white hover:text-yellow-500 transition duration-300">
         <FaHome className="w-6 h-6" />
@@ -250,11 +246,7 @@ export default function Home() {
         <a href="#contact" className="text-white hover:text-yellow-500 transition duration-300">
         <FaEnvelope className="w-6 h-6" />
         </a>
-      </nav>
-          
-
-    
-         
+      </nav>      
     </div>
   );
 }
