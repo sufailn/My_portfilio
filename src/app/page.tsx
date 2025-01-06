@@ -1,6 +1,5 @@
 import React from "react";
 import { FaHome, FaGraduationCap, FaTools, FaProjectDiagram, FaEnvelope, FaPhone } from "react-icons/fa";
-import Link from "next/link";
 import './styles.css'; // Import the CSS file
 import ThreeDCardDemo from "../components/ThreeDCardDemo";
 import { FloatingDock } from "../components/Nav";
