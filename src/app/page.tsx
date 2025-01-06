@@ -2,70 +2,60 @@ import React from "react";
 import { FaHome, FaGraduationCap, FaTools, FaProjectDiagram, FaEnvelope, FaPhone } from "react-icons/fa";
 import Link from "next/link";
 import './styles.css'; // Import the CSS file
-
-
-
+import ThreeDCardDemo from "../components/ThreeDCardDemo";
+import { FloatingDock } from "../components/Nav";
 export default function Home() {
+  const links = [
+    {
+      title: "Home",
+      icon: <FaHome />, // React Icon
+      href: "#home",
+    },
+    {
+      title: "Education",
+      icon: <FaGraduationCap />, // React Icon
+      href: "#education",
+    },
+    {
+      title: "Skills",
+      icon: <FaTools />, // React Icon
+      href: "#skills",
+    },
+    {
+      title: "Projects",
+      icon: <FaProjectDiagram />, // React Icon
+      href: "#projects",
+    },
+    {
+      title: "Contact",
+      icon: <FaEnvelope />, // React Icon
+      href: "#contact",
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-[#021012] p-8 sm:p-20">
-      {/* Header Section */}
-      <div id="home" className="relative bg-cover bg-center opacity-85 h-96" style={{ backgroundImage: "url('/model_bw.png')" }}>
-      <header className="absolute inset-0 flex flex-col items-center justify-center text-center mb-16">
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4 opacity-90 text-blue-400 hover:text-white">
-      {/* Splitting each letter */}
-      {"Sufail Ahammed N".split("").map((letter, index) => (
-        <span
-        key={index}
-        className="inline-block animate-blinkPop"
-        style={{ animationDelay: `${index * 0.25}s`, animationIterationCount: '1', marginRight: letter === ' ' ? '0.5rem' : '0' }}
-        >
-        {letter}
-        </span>
-      ))}
-        </h1>
-        <p className="text-xl sm:text-2xl text-yellow-500 font-bold hover:text-white">
-        Full Stack Developer 
-        </p>
-        <Link className="button" href='https://wa.me/919562026070'>Explore</Link>
-      </header>
-      <div className="absolute right-5 mt-10 top-2/3 transform -translate-y-1/2 flex flex-col space-y-4 p-2 rounded-l-lg shadow-lg">
-        <a href="https://www.linkedin.com/in/sufail-ahammed-n/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-yellow-500 transition duration-300">
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.378-1.122-2.5-2.5-2.5s-2.5 1.122-2.5 2.5v5.5h-3v-10h3v1.268c.878-.878 2.122-1.268 3.5-1.268 2.481 0 4.5 2.019 4.5 4.5v5.5z"/>
-      </svg>
-        </a>
-        <a href="https://github.com/sufailn" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition duration-300">
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0c-6.627 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.387.6.111.82-.261.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.304.76-1.604-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.804 5.624-5.475 5.921.43.371.814 1.102.814 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.218.694.825.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-        </a>
-        <a href="https://www.instagram.com/sufail__ahmd" target="_blank" rel="noopener noreferrer" className="text-pink-800 hover:text-yellow-500 transition duration-300">
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.281.058-2.418.27-3.29.542-.872.272-1.611.63-2.347 1.366-.736.736-1.094 1.475-1.366 2.347-.272.872-.484 2.009-.542 3.29-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.281.27 2.418.542 3.29.272.872.63 1.611 1.366 2.347.736.736 1.475 1.094 2.347 1.366.872.272 2.009.484 3.29.542 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.281-.058 2.418-.27 3.29-.542.872-.272 1.611-.63 2.347-1.366.736-.736 1.094-1.475 1.366-2.347.272-.872.484-2.009.542-3.29.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.281-.27-2.418-.542-3.29-.272-.872-.63-1.611-1.366-2.347-.736-.736-1.475-1.094-2.347-1.366-.872-.272-2.009-.484-3.29-.542-1.28-.058-1.688-.072-4.947-.072z"/>
-        <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.293 0-4.162-1.869-4.162-4.162s1.869-4.162 4.162-4.162 4.162 1.869 4.162 4.162-1.869 4.162-4.162 4.162z"/>
-        <circle cx="18.406" cy="5.594" r="1.44"/>
-        </svg>
-        </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-500 transition duration-300">
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.723 0-4.928 2.205-4.928 4.928 0 .386.044.762.127 1.124-4.094-.205-7.725-2.165-10.148-5.144-.424.729-.666 1.577-.666 2.476 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.247-2.228-.616v.062c0 2.388 1.698 4.384 3.95 4.835-.413.112-.849.171-1.296.171-.317 0-.626-.031-.927-.088.627 1.956 2.444 3.379 4.6 3.419-1.68 1.318-3.809 2.104-6.115 2.104-.398 0-.79-.023-1.175-.069 2.179 1.397 4.768 2.212 7.548 2.212 9.057 0 14.01-7.507 14.01-14.01 0-.213-.005-.426-.014-.637.961-.694 1.796-1.562 2.457-2.549z"/>
-      </svg>
-        </a>
-      </div>
-      </div>
+
+
+<div className="min-h-screen bg-[#021012] p-8 sm:p-20">
+      
+<ThreeDCardDemo />
+
 
     {/* About Me Section */}
     <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
       <section className="section__container text-center">
+      
       <div className='creative__text--animation-1 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
       I&apos;m
       <span className='creative-text block sm:inline' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
       <span className='block sm:inline' style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
-      <span className='block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Fullstack Developer.'>a Fullstack Developer.</span>
+      <span className='creative-text block sm:inline' style={{ '--i': 2 } as React.CSSProperties} data-text='a Fullstack Developer'>a Fullstack Developer</span>
       <span className='block sm:inline' style={{ '--i': 3 } as React.CSSProperties} data-text='a Designer.'>a Designer.</span>
       </div>
       </section>
     </section>
+
+
 
       {/* Education Section */}
       <section id="education" className="mb-16">
@@ -223,30 +213,26 @@ export default function Home() {
               <button type="submit" className="flex items-center px-4 py-2 bg-yellow-300 text-gray-800 rounded-lg hover:bg-yellow-400 transition duration-300">
               <FaEnvelope className="mr-2" /> Send
               </button>
+                  
+
             </form>
+            
             </section>
              
             </div>
             <div  className="text-center ml-5 pl-3"></div>
                 <p className="ml-24">&copy; {new Date().getFullYear()} Sufail Ahammed. All rights reserved.</p>
             </footer>
-          <nav className="fixed top-1/2 left-0 transform -translate-y-1/2 flex flex-col space-y-4 p-2 bg-gray-800 rounded-r-lg shadow-lg " style={{ zIndex: 1000 }}>
-        <a href="#home" className="text-white hover:text-yellow-500 transition duration-300">
-        <FaHome className="w-6 h-6" />
-        </a>
-        <a href="#education" className="text-white hover:text-yellow-500 transition duration-300">
-        <FaGraduationCap className="w-6 h-6" />
-        </a>
-        <a href="#skills" className="text-white hover:text-yellow-500 transition duration-300">
-        <FaTools className="w-6 h-6" />
-        </a>
-        <a href="#projects" className="text-white hover:text-yellow-500 transition duration-300">
-        <FaProjectDiagram className="w-6 h-6" />
-        </a>
-        <a href="#contact" className="text-white hover:text-yellow-500 transition duration-300">
-        <FaEnvelope className="w-6 h-6" />
-        </a>
-      </nav>      
+            <div className="w-full h-screen">
+  {/* Pass the links and classes to FloatingDock component */}
+  <FloatingDock
+    items={links}
+    desktopClassName="fixed left-0 top-1/2 rotate-90"// Fixes the position to the left and centers it vertically
+    mobileClassName="fixed  top-1/2 right-5"
+  />
+</div>
+
+          
     </div>
   );
 }

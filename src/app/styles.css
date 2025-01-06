@@ -53,7 +53,6 @@
   color: #ffffff;
 }
 
-/*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
@@ -118,8 +117,6 @@ h1 {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-
-
 .section__container {
   --white-color: #ffffff;
   --dark-color: #021012;
@@ -143,6 +140,7 @@ h1 {
 
   display: inline-block;
   font-size: 4em;
+  -webkit-text-stroke: 1px var(--primary-color);
   font-weight: 600;
   padding: 0 100px;
   color: var(--text-color);
@@ -153,12 +151,24 @@ h1 {
   color: transparent;
   -webkit-text-stroke: 1px var(--primary-color);
   line-height: 1.2em;
+  font-size: 1em;
   padding: 5px 10px;
   animation: displayText 12s infinite;
-  animation-delay: calc(-3s * var(--i));
+  animation-delay: calc(-3s * var(--i, 0)); /* Fallback for unsupported --i */
+  -webkit-animation: displayText 12s infinite;
+  -webkit-animation-delay: calc(-3s * var(--i, 0));
 }
 
 @keyframes displayText {
+  0% {
+    display: inline-block;
+  }
+  25%, 100% {
+    display: none;
+  }
+}
+
+@-webkit-keyframes displayText {
   0% {
     display: inline-block;
   }
@@ -182,10 +192,20 @@ h1 {
   border-right: 2px solid var(--primary-color);
   color: var(--primary-color);
   animation: animate 3s linear infinite;
+  -webkit-animation: animate 3s linear infinite;
   filter: drop-shadow(0 0 5px var(--primary-color)) drop-shadow(0 0 25px var(--primary-color));
 }
 
 @keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes animate {
   0%, 10%, 100% {
     width: 0;
   }
@@ -199,6 +219,7 @@ h1 {
   --primary-color: #01fe87;
   --text-color: #ffffff;
   --text-color-transparent: #021012;
+
   display: inline-block;
   font-size: 4em;
   font-weight: 600;
@@ -210,7 +231,9 @@ h1 {
   position: relative;
   color: var(--text-color-transparent);
   animation: displayText-2 12s infinite;
-  animation-delay: calc(-3s * var(--i));
+  animation-delay: calc(-3s * var(--i, 0));
+  -webkit-animation: displayText-2 12s infinite;
+  -webkit-animation-delay: calc(-3s * var(--i, 0));
 }
 
 @keyframes displayText-2 {
@@ -222,54 +245,7 @@ h1 {
   }
 }
 
-.creative__text--animation-2 span::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-right: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  animation: animate-2 3s linear infinite;
-  filter: drop-shadow(0 0 5px var(--primary-color)) drop-shadow(0 0 25px var(--primary-color));
-}
-
-@keyframes animate-2 {
-  0%, 10%, 100% {
-    width: 0;
-  }
-  70%, 90% {
-    width: 100%;
-  }
-}
-
-/*=== Creative Typing Text Effect Animation Style 3 ===*/
-.creative__text--animation-3 {
-  --primary-color: #01fe87;
-  --text-color: #ffffff;
-  --text-color-transparent: #021012;
-  --gradient-color-1: #CC98FF;
-  --gradient-color-2: #00AFFA;
-  --gradient-color-3: #0190CD;
-  --gradient-color-4: #FC96FF;
-
-  display: inline-block;
-  font-size: 4em;
-  font-weight: 600;
-  padding: 0 100px;
-  color: var(--text-color);
-}
-
-.creative__text--animation-3 span {
-  position: relative;
-  color: var(--text-color-transparent);
-  animation: displayText-3 12s infinite;
-  animation-delay: calc(-3s * var(--i));
-}
-
-@keyframes displayText-3 {
+@-webkit-keyframes displayText-2 {
   0% {
     display: inline-block;
   }
@@ -278,59 +254,12 @@ h1 {
   }
 }
 
-.creative__text--animation-3 span::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: linear-gradient(
-    to right,
-    var(--gradient-color-1) 20%,
-    var(--gradient-color-2) 30%,
-    var(--gradient-color-3) 70%,
-    var(--gradient-color-4) 80%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 500% auto;
-  border-right: 2px solid var(--gradient-color-1);
-  color: transparent;
-  animation: animate-3 3s linear infinite, animate-text 4s ease-in-out infinite alternate;
-}
-
-@keyframes animate-3 {
-  0%, 10%, 100% {
-    width: 0;
-  }
-  70%, 90% {
-    width: 100%;
-  }
-}
-
-@keyframes animate-text {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Responsive adjustments */
+/*=== Responsive Adjustments ===*/
 @media screen and (max-width: 768px) {
   .creative__text--animation-1,
-  .creative__text--animation-2,
-  .creative__text--animation-3 {
+  .creative__text--animation-2 {
     font-size: 2em;
     padding: 0 50px;
-  }
-
-  .button {
-    padding: 0.5rem;
   }
 
   h1 {
@@ -340,17 +269,25 @@ h1 {
 
 @media screen and (max-width: 480px) {
   .creative__text--animation-1,
-  .creative__text--animation-2,
-  .creative__text--animation-3 {
-    font-size: 1.5em;
+  .creative__text--animation-2 {
+    font-size: 1.2em;
     padding: 0 20px;
-  }
-
-  .button {
-    padding: 0.25rem;
   }
 
   h1 {
     font-size: 1.5em;
   }
 }
+
+  .button {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+  /* In your global or component-specific CSS */
+a:hover {
+  color: #facc15; /* Apply yellow color on hover */
+}
+
