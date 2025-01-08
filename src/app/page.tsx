@@ -224,8 +224,8 @@ export default function Home() {
             </section>
              
             </div>
-            <div  className="text-center ml-5 pl-3"></div>
-                <p className="ml-24">&copy; {new Date().getFullYear()} Sufail Ahammed. All rights reserved.</p>
+            <div  className="text-center"></div>
+                <p className="text-center" >&copy; {new Date().getFullYear()} Sufail Ahammed. All rights reserved.</p>
             </footer>
             <div className="w-full h-screen">
   {/* Pass the links and classes to FloatingDock component */}
