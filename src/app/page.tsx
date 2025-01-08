@@ -3,6 +3,7 @@ import { FaHome, FaGraduationCap, FaTools, FaProjectDiagram, FaEnvelope, FaPhone
 import './styles.css'; // Import the CSS file
 import ThreeDCardDemo from "../components/ThreeDCardDemo";
 import { FloatingDock } from "../components/Nav";
+import { TimelineDemo } from "@/components/timelineDemo";
 export default function Home() {
   const links = [
     {
@@ -44,7 +45,7 @@ export default function Home() {
     <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
       <section className="section__container text-center">
       
-      <div className='creative__text--animation-1 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
+      <div className='creative__text--animation-1 text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>
       I&apos;m
       <span className='creative-text block sm:inline' data-text='Sufail Ahammed.' style={{ '--i': 0 } as React.CSSProperties}>Sufail Ahammed.</span>
       <span className='block sm:inline' style={{ '--i': 1 } as React.CSSProperties} data-text='a Coder.'>a Coder.</span>
@@ -58,7 +59,7 @@ export default function Home() {
 
       {/* Education Section */}
       <section id="education" className="mb-16">
-      <h2 className="text-2xl font-semibold text-white mb-4">Education</h2>
+      {/* <h2 className="text-2xl font-semibold text-white mb-4">Education</h2>
       <div className="space-y-6 border-l-4 border-yellow-300 pl-4">
         <div>
       <h3 className="text-xl font-medium text-yellow-300 mb-2">Master of Computer Application (MCA)</h3>
@@ -74,8 +75,12 @@ export default function Home() {
       <p className="text-gray-400">Specialization: Computer Applications</p>
       <p className="text-gray-400">Top 10% of the class; Developed a project to optimize college admin processes, reducing manual work by 40%</p>
         </div>
-      </div>
+      </div> */}
       </section>
+<section  id="education" className="mb-16">
+<TimelineDemo />
+    
+</section>
 
 
       {/* Skills Section */}
@@ -235,3 +240,5 @@ export default function Home() {
     </div>
   );
 }
+
+
